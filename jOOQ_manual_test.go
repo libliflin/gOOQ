@@ -20,7 +20,7 @@ func Test331gooqAsSQLBuilder(t *testing.T) {
 						.On(gooq.Field("BOOK.AUTHOR_ID").Equal(gooq.Field("AUTHOR_ID")))
 						.Where(gooq.Field("BOOK.PUBLISHED_IN").Equal(1948))
 						.GetSQL()
-	want := "" // having trouble getting this, probably because I'm trying to do it in scala. 
+	want := "select BOOK.TITLE, AUTHOR.FIRST_NAME, AUTHOR.LAST_NAME from BOOK join AUTHOR on BOOK.AUTHOR_ID = AUTHOR.ID where BOOK.PUBLISHED_IN = 1948" 
 	if got != want {
 		t.Errorf("gooq.Select == %q, want %q", got, want)
 	}
