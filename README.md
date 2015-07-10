@@ -6,6 +6,8 @@ Schema generated go-lang interfaces coupled with type-safe query language. (aka,
 For nulls, go has a [comma ok](https://golang.org/doc/effective_go.html#maps) idiom, which is why each field access 
 will need to be a method. 
 
+Go does not have constructors, so need to use factory methods.
+
 For schema APIs, methods will be collected into interfaces. 
 
 Since go doesn't have generics, a schema specific version of the query dsl will be need to be created.
