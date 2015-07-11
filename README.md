@@ -25,3 +25,18 @@ Current Plan:
 4. Polish up code-gen prototype with [WebERP](http://www.weberp.org/)'s schema
 5. Polish up the SQL-gen with queries translated from [WebERP](http://www.weberp.org/)'s PHP.
 6. Implement preparedStatment caches, batching, connection pooling and other performance items.
+
+
+Notes:
+* go get github.com/libliflin/gooq
+* go build ./...
+* go test
+
+URLs:
+[Effective Go](https://golang.org/doc/effective_go.html)
+[libliflin/gOOQ](https://github.com/libliflin/gOOQ)
+[How to Write Go Code](https://golang.org/doc/code.html)
+[The jOOQ User Manual. Single Page.](http://www.jooq.org/doc/3.6/manual-single-page)
+[DSL (jOOQ 3.6.2 API)](http://www.jooq.org/javadoc/3.6.x/org/jooq/impl/DSL.html)
+[Getting Started - Go](https://golang.org/doc/install)
+[The Go Programming Language Specification](https://golang.org/ref/spec)
