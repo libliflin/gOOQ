@@ -25,6 +25,10 @@ type SelectOnConditionStep interface {
 }
 type SelectConditionStep interface {
 	Query
+	ResultQuery
+}
+type ResultQuery interface {
+	Fetch() []string
 }
 type Query interface {
 	GetSQL() string
@@ -54,6 +58,9 @@ func (h2 h2db) GetSQL() string {
 }
 func (h2 h2db) Equal(f Field) Condition {
 	return h2
+}
+func (h2 h2db) Fetch() []string {
+	return make([]string, 1)
 }
 
 func Select(f ...Field) SelectSelectStep {

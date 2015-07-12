@@ -54,3 +54,27 @@ func Test332gooqAsSQLBuilderWithCodeGeneration(t *testing.T) {
 		t.Errorf("Select == %q, want %q", got, want)
 	}
 }
+
+// Test333gooqAsSQLExecutor1 tests the first code block from Section 3.3.3 jOOQ as a SQL executor
+// Found in jOOQ 3.6 User Manual.
+// http://www.jooq.org/doc/3.6/manual-single-page/#jooq-as-a-sql-executor
+func Test333gooqAsSQLExecutor1(t *testing.T) {
+	// Typesafely execute the SQL statement directly with jOOQ
+	// Result<Record3<String, String, String>> result =
+	// create.select(BOOK.TITLE, AUTHOR.FIRST_NAME, AUTHOR.LAST_NAME)
+	//       .from(BOOK)
+	//       .join(AUTHOR)
+	//       .on(BOOK.AUTHOR_ID.equal(AUTHOR.ID))
+	//       .where(BOOK.PUBLISHED_IN.equal(1948))
+	//       .fetch();
+	got := Select(book.TITLE, author.FIRST_NAME, author.LAST_NAME).
+		From(BOOK).
+		Join(AUTHOR).
+		On(book.AUTHOR_ID.Equal(author.AUTHOR_ID)).
+		Where(book.PUBLISHED_IN.Equal(Val(1948))).
+		Fetch()
+	want := "select BOOK.TITLE, AUTHOR.FIRST_NAME, AUTHOR.LAST_NAME from BOOK join AUTHOR on BOOK.AUTHOR_ID = AUTHOR.ID where BOOK.PUBLISHED_IN = 1948"
+	if got != want {
+		t.Errorf("Select == %q, want %q", got, want)
+	}
+}
