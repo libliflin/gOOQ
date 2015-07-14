@@ -3,6 +3,8 @@ Schema generated go-lang interfaces coupled with type-safe query language. (aka,
 
 ## this project is currently under design.
 
+### I'm going to have to abandon this project until I find a way to use go's mixins and structs to accomplish my goal of static typing grammars in Go.
+
 For nulls, go has a [comma ok](https://golang.org/doc/effective_go.html#maps) idiom, which is why each field access 
 will need to be a method. 
 
@@ -33,10 +35,17 @@ Notes:
 * go test
 
 URLs:
+
 [Effective Go](https://golang.org/doc/effective_go.html)
+
 [libliflin/gOOQ](https://github.com/libliflin/gOOQ)
+
 [How to Write Go Code](https://golang.org/doc/code.html)
+
 [The jOOQ User Manual. Single Page.](http://www.jooq.org/doc/3.6/manual-single-page)
+
 [DSL (jOOQ 3.6.2 API)](http://www.jooq.org/javadoc/3.6.x/org/jooq/impl/DSL.html)
+
 [Getting Started - Go](https://golang.org/doc/install)
+
 [The Go Programming Language Specification](https://golang.org/ref/spec)
